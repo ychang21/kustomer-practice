@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.kustomerapp.com/card-js/latest/kustomer-card.min.js"></script>
+  <script>
+  function loadContext() {
+                // Kustomer.initialize is required for card visibility in panel.
+
+            var settings = {
+                      "async": true,
+                      "crossDomain": true,
+                      "url": "https://api.kustomerapp.com/v1/customers/email=matt@kustomer.com",
+                      "method": "GET",
+                      "headers": {
+                        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4YjM0Yjg0YzA5ZDYyMTEwMDM4NmU3OSIsInVzZXIiOiI1OGIzNGI4NDUzMDUyZjExMDAxNDcxZTkiLCJvcmciOiI1OGIwNWI3MDY4NGExMDExMDBhMTdlYmYiLCJvcmdOYW1lIjoienp6LWlzYWJlbGwiLCJ1c2VyVHlwZSI6Im1hY2hpbmUiLCJyb2xlcyI6WyJvcmcuYWRtaW4uY29udGVudCIsIm9yZy51c2VyIiwib3JnLmFkbWluLmFwcHMiXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjU4YjM0Yjg0NTMwNTJmMTEwMDE0NzFlOSJ9.W3AK7pIXvuKdmWi_NyYObbFz25k_w-9nwRkAxraAyS0"
+                      },
+                      "data": "{}"
+                    }
+
+                    $.ajax(settings).done(function (response) {
+                      console.log(response);
+                    });
+}
+  // (function(window, document, kustomer, undefined) {
+  //   window.Kustomer = kustomer;
+  //   kustomer._q = [];
+  //   kustomer._i = [];
+  //   kustomer.init = function(API_KEY) {
+  //     function applyMethod(kustomer, methodName) {
+  //       kustomer[methodName] = function() {
+  //         kustomer._q.push(
+  //           [methodName].concat(Array.prototype.slice.call(arguments, 0))
+  //         )
+  //       }
+  //     }
+
+  //     var methods = "init clear identify track start describe".split(' ');
+  //     for (var i = 0; i < methods.length; i++) {
+  //       applyMethod(kustomer, methods[i]);
+  //     }
+  //     kustomer._i.push(API_KEY);
+  //   };
+
+  //   var script = document.createElement('script');
+  //   script.type = 'text/javascript';
+  //   script.async = true;
+  //   script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.min.js";
+  //   var element = document.getElementsByTagName("script")[0];
+  //   element.parentNode.insertBefore(script, element);
+  // })(this, document, window.Kustomer || {});
+
+  // // Add your API Key here
+  // Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4YjM1MmQ4MGVmYjJiMTEwMDU2ODdmOCIsInVzZXIiOiI1OGIzNTJkODY4NGExMDExMDBhNTAxZTIiLCJvcmciOiI1OGIwNWI3MDY4NGExMDExMDBhMTdlYmYiLCJvcmdOYW1lIjoienp6LWlzYWJlbGwiLCJ1c2VyVHlwZSI6Im1hY2hpbmUiLCJyb2xlcyI6WyJvcmcudXNlciIsIm9yZy5hZG1pbi5iaWxsaW5nIiwib3JnLmFkbWluIiwib3JnLmFkbWluLmNvbnRlbnQiLCJvcmcudHJhY2tpbmciLCJvcmcuYWRtaW4udXNlciIsIm9yZy5hZG1pbi5hcHBzIiwib3JnLmhvb2tzIl0sImF1ZCI6InVybjpjb25zdW1lciIsImlzcyI6InVybjphcGkiLCJzdWIiOiI1OGIzNTJkODY4NGExMDExMDBhNTAxZTIifQ.N84SFmKeUvsYKk2C2Ry5_8svAzDXWAw8oYvYQjLLaWk');
+
+  // // Start the chat client
+  // Kustomer.start();
+  loadContext();
+
+</script>
+<body>
+<div class="ui card mainCard">
+            <div class="content">
+                <div class="ui header cardHeader">
+                    Google Search
+                </div>
+            </div>
+            <hr class="lineBreak">
+            <div id="container" class="ui one textArea"></div>
+        </div>
+    </body>
+</html>
