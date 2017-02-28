@@ -46,6 +46,7 @@
             var orderNum = orderInfo.data[0].attributes.externalId;
             var date = orderInfo.data[0].data.orderDate;
             var total = orderInfo.data[0].data.orderTotal;
+            var status = orderInfo.data[0].custom.trackingUrl + orderInfo.data[0].custom.trackingNumStr;
             var item1 = orderInfo.data[0].data.lineItems[0].title;
             var item1Options = orderInfo.data[0].data.lineItems[0].color + " / " +orderInfo.data[0].data.lineItems[0].size;
             var item1Quantity = orderInfo.data[0].data.lineItems[0].quantity;
@@ -65,6 +66,7 @@
                 document.getElementById("num").appendChild(a);
                 $('#date').append(date);
                 $('#total').append(total);
+                $('#status').append(status);
                 $('#inner-table').append("<tr><td>" + item1 + "</td><td>" + item1Options + "</td><td>" + item1Quantity + "</td><td>" + item1Price + "</td></tr>");
                 $('#inner-table').append("<tr><td>" + item2 + "</td><td>" + item2Options + "</td><td>" + item2Quantity + "</td><td>" + item2Price + "</td></tr>");
                 } else {
@@ -83,7 +85,7 @@
             });
 
       //this is the first step to install the card with Post /v1/cards.available
-    
+      //I did not get a successful response for this. 
       var firstCard = {
         "async": true,
         "crossDomain": true,
@@ -103,10 +105,11 @@
 
     //this is the second step to install the card with Post /v1/cards/available/{id}/install
     //this should post the card into the kustomer software barring any issues
+    //I couldn't retrieve the id number for this
       var secondCard = {
         "async": true,
         "crossDomain": true,
-        "url": "https://api.kustomerapp.com/v1/v1/cards/available/58b05e02684a101100a184a0/install",
+        "url": "https://api.kustomerapp.com/v1/v1/cards/available/{id}/install",
         "method": "POST",
         "headers": {
           "content-type": "application/json",
@@ -122,5 +125,6 @@
     });
 }
 
-  loadContext();
+//this starts the code right when the page loads
+loadContext();
 
